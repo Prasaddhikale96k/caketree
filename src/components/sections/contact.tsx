@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 const contactInfo = [
   { icon: Phone, text: "+91 12345 67890", href: "tel:+911234567890" },
   { icon: MessageCircle, text: "WhatsApp Us", href: "https://wa.me/911234567890" },
-  { icon: MapPin, text: "Behind Jatra Hotel, Nashik", href: "#map" },
+  { icon: MapPin, text: "Shop no.4, Vaishnavi park-A, Adgaon, Nashik", href: "#map" },
   { icon: Instagram, text: "@thecaketree", href: "https://instagram.com" },
 ];
 
@@ -30,7 +30,7 @@ export default function ContactSection() {
               <a 
                 key={index} 
                 href={item.href}
-                target="_blank"
+                target={item.href.startsWith('http') ? '_blank' : '_self'}
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
               >

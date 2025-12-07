@@ -5,7 +5,7 @@ import { MapPin } from "lucide-react";
 
 export default function MapSection() {
   const mapImage = PlaceHolderImages.find((p) => p.id === "map-image");
-  const mapLink = "https://maps.app.goo.gl/your-location-link"; // Replace with actual link
+  const mapLink = "https://maps.app.goo.gl/M4s5eM3W3qA8Z9jE8"; 
 
   return (
     <section id="map" className="py-16 sm:py-24 bg-background">
@@ -13,7 +13,7 @@ export default function MapSection() {
         <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold text-accent">Find Your Way to Us</h2>
           <p className="text-muted-foreground mt-2 max-w-2xl mx-auto text-balance">
-            We are conveniently located behind Jatra Hotel in Nashik. Come visit us for a delightful experience.
+            We are conveniently located at Shop no.4, Vaishnavi park-A, Behind Jatra Hotel, Nandur Naka Road, Adgaon, Nashik.
           </p>
         </div>
 
