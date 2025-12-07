@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 
 export default function MapSection() {
-  const mapLink = "https://maps.app.goo.gl/M4s5eM3W3qA8Z9jE8"; 
+  const mapLink = "https://maps.app.goo.gl/HMCsbUqzRrSDXMVj9"; 
   const embedMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.877735398254!2d73.83446007588302!3d20.013473081403595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddebabd9313491%3A0x4426ce2903b573e!2sThe%20Cake%20Tree!5e0!3m2!1sen!2sin!4v1727788574685!5m2!1sen!2sin";
 
   return (
