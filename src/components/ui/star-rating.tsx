@@ -1,3 +1,5 @@
+"use client";
+
 import { Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -16,7 +18,7 @@ export function StarRating({ rating, maxRating = 5, className, starClassName }: 
           key={i}
           className={cn(
             'h-5 w-5',
-            i < rating ? 'text-primary fill-primary' : 'text-muted-foreground/50',
+            i < Math.floor(rating) ? 'text-accent fill-accent' : i < rating ? 'text-accent' : 'text-muted-foreground/30',
             starClassName
           )}
         />
