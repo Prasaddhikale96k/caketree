@@ -16,11 +16,11 @@ const cardVariants = {
 export default function TestimonialsSection() {
 
   return (
-    <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="md:col-span-2 lg:col-span-1">
+    <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="md:col-span-2 lg:col-span-2">
       <Card id="testimonials" className="p-8 h-full">
         <h2 className="text-4xl md:text-5xl font-extrabold text-foreground leading-none mb-6">Reviews</h2>
-        <div className="flex flex-col gap-6">
-            {testimonials.slice(0,2).map((testimonial) => {
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
+            {testimonials.slice(0,4).map((testimonial) => {
               const testimonialImage = PlaceHolderImages.find((p) => p.id === testimonial.imageId);
               return (
                   <div key={testimonial.id} className="flex gap-4 items-start">
