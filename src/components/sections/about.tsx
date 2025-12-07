@@ -23,7 +23,7 @@ export default function AboutSection() {
                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
             </div>
             <div className="p-8 md:p-12 space-y-6 animate-fade-in-up [animation-delay:0.2s]">
-              <h2 className="text-3xl md:text-4xl font-bold font-script text-primary">A Story Baked in Every Layer</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-script text-accent">A Story Baked in Every Layer</h2>
               <p className="text-muted-foreground leading-relaxed text-balance">
                 It begins in the quiet hours, when golden light first spills into the kitchen. The Cake Tree was born not from a recipe, but a feeling—a love for the slow, handcrafted magic of baking. Here, time is an ingredient. Chocolate is patiently melted, fruits are precisely placed, and every creation is finished by hand, with heart. We believe a cake should be more than just a dessert; it should be the centerpiece of a memory. We invite you to taste the story.
               </p>
