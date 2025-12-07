@@ -14,18 +14,18 @@ import Marquee from "@/components/ui/marquee";
 
 export default function Home() {
   return (
-    <div className="p-4">
+    <div className="p-4 space-y-4">
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <HeroSection />
         <AboutSection />
         <SpecialsSection />
         <MenuSection />
-        <GallerySection />
         <TestimonialsSection />
         <ContactSection />
         <MapSection />
         <GoogleRatingSection />
       </main>
+      <GallerySection />
       <Marquee text="Freshly Baked • Nature Lover • Organic Ingredients" />
       <Footer />
     </div>
