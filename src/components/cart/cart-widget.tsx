@@ -41,9 +41,31 @@ export default function CartWidget() {
     window.open(whatsappUrl, "_blank");
   };
 
+  const CartButton = () => (
+    <Button
+      id="cart-icon"
+      variant="ghost"
+      size="icon"
+      className="relative rounded-full w-12 h-12 bg-card text-foreground shadow-lg"
+      onClick={() => setIsCartOpen(true)}
+    >
+      <ShoppingBag />
+      {cartCount > 0 && (
+        <span className="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
+          {cartCount}
+        </span>
+      )}
+      <span className="sr-only">Open cart</span>
+    </Button>
+  );
+
   return (
-    <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
-      {!isMobile && (
+    <>
+      {isMobile ? (
+        <div className="fixed top-4 right-4 z-50">
+          <CartButton />
+        </div>
+      ) : (
         <>
           <motion.div 
             ref={constraintsRef} 
@@ -76,49 +98,51 @@ export default function CartWidget() {
           </motion.div>
         </>
       )}
-      <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg bg-card">
-        <SheetHeader className="px-6">
-          <SheetTitle>Cart ({cartCount})</SheetTitle>
-        </SheetHeader>
-        <Separator />
-        {cartCount > 0 ? (
-          <>
-            <ScrollArea className="flex-grow px-6">
-                <div className="flex flex-col gap-4 py-4">
-                    {cartItems.map((item) => (
-                        <CartItem key={item.id} item={item} />
-                    ))}
+      <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
+        <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg bg-card">
+          <SheetHeader className="px-6">
+            <SheetTitle>Cart ({cartCount})</SheetTitle>
+          </SheetHeader>
+          <Separator />
+          {cartCount > 0 ? (
+            <>
+              <ScrollArea className="flex-grow px-6">
+                  <div className="flex flex-col gap-4 py-4">
+                      {cartItems.map((item) => (
+                          <CartItem key={item.id} item={item} />
+                      ))}
+                  </div>
+              </ScrollArea>
+              <Separator />
+              <SheetFooter className="px-6 py-4 bg-card">
+                <div className="w-full space-y-4">
+                  <div className="flex justify-between text-lg font-semibold">
+                    <span>Subtotal</span>
+                    <span>₹{cartTotal}</span>
+                  </div>
+                  <Button 
+                      onClick={handleCheckout} 
+                      className="w-full bg-foreground text-background hover:bg-foreground/80"
+                      disabled={cartCount === 0}
+                  >
+                      Checkout via WhatsApp
+                  </Button>
                 </div>
-            </ScrollArea>
-            <Separator />
-            <SheetFooter className="px-6 py-4 bg-card">
-              <div className="w-full space-y-4">
-                <div className="flex justify-between text-lg font-semibold">
-                  <span>Subtotal</span>
-                  <span>₹{cartTotal}</span>
-                </div>
-                <Button 
-                    onClick={handleCheckout} 
-                    className="w-full bg-foreground text-background hover:bg-foreground/80"
-                    disabled={cartCount === 0}
-                >
-                    Checkout via WhatsApp
-                </Button>
+              </SheetFooter>
+            </>
+          ) : (
+            <div className="flex flex-1 items-center justify-center px-6">
+              <div className="text-center">
+                  <ShoppingBag className="mx-auto h-16 w-16 text-muted-foreground" />
+                  <h3 className="mt-4 text-lg font-medium">Your cart is empty</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                      Add items from the menu to get started.
+                  </p>
               </div>
-            </SheetFooter>
-          </>
-        ) : (
-          <div className="flex flex-1 items-center justify-center px-6">
-            <div className="text-center">
-                <ShoppingBag className="mx-auto h-16 w-16 text-muted-foreground" />
-                <h3 className="mt-4 text-lg font-medium">Your cart is empty</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                    Add items from the menu to get started.
-                </p>
             </div>
-          </div>
-        )}
-      </SheetContent>
-    </Sheet>
+          )}
+        </SheetContent>
+      </Sheet>
+    </>
   );
 }
