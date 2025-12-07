@@ -44,7 +44,7 @@ export default function MenuSection() {
             clonedImage.style.width = '20px';
             clonedImage.style.height = '20px';
             clonedImage.style.opacity = '0';
-            clonedImage.style.transform = 'scale(0.2) rotate(360deg)';
+            clonedImage.style.transform = 'scale(0.2)';
         });
       }
       
