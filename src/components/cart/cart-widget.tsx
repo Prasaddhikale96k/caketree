@@ -7,7 +7,6 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
   SheetFooter,
 } from "@/components/ui/sheet";
 import { useCart } from "@/context/cart-context";
@@ -15,13 +14,14 @@ import CartItem from "./cart-item";
 import { Separator } from "../ui/separator";
 import { ScrollArea } from "../ui/scroll-area";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const WHATSAPP_PHONE_NUMBER = "918698921009";
 
 export default function CartWidget() {
   const { cartItems, cartCount, cartTotal } = useCart();
   const constraintsRef = useRef(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleCheckout = () => {
     let lines = ["Hi CakeTree! I'd like to place an order:", ""];
@@ -41,37 +41,36 @@ export default function CartWidget() {
   };
 
   return (
-    <Sheet>
+    <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
       <motion.div 
         ref={constraintsRef} 
         className="fixed inset-0 pointer-events-none"
       />
-      <SheetTrigger asChild>
-        <motion.div
-            drag
-            dragConstraints={constraintsRef}
-            whileTap={{ scale: 0.95, cursor: "grabbing" }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 1 }}
-            className="fixed bottom-6 right-6 z-50 cursor-grab touch-none"
-        >
-        <Button
-          id="cart-icon"
-          variant="default"
-          size="icon"
-          className="rounded-full w-16 h-16 bg-card text-foreground shadow-lg pointer-events-auto"
-        >
-          <ShoppingBag />
-          {cartCount > 0 && (
-            <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
-              {cartCount}
-            </span>
-          )}
-          <span className="sr-only">Open cart</span>
-        </Button>
-        </motion.div>
-      </SheetTrigger>
+      <motion.div
+          drag
+          dragConstraints={constraintsRef}
+          whileTap={{ scale: 0.95, cursor: "grabbing" }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 1 }}
+          onTap={() => setIsCartOpen(true)}
+          className="fixed bottom-6 right-6 z-50 cursor-grab touch-none"
+      >
+      <Button
+        id="cart-icon"
+        variant="default"
+        size="icon"
+        className="rounded-full w-16 h-16 bg-card text-foreground shadow-lg pointer-events-auto"
+      >
+        <ShoppingBag />
+        {cartCount > 0 && (
+          <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
+            {cartCount}
+          </span>
+        )}
+        <span className="sr-only">Open cart</span>
+      </Button>
+      </motion.div>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg bg-card">
         <SheetHeader className="px-6">
           <SheetTitle>Cart ({cartCount})</SheetTitle>
