@@ -23,20 +23,6 @@ export default function HeroSection() {
               <Image src={logoUrl} alt="The Cake Tree Logo" width={40} height={40} className="rounded-full" />
               <h1 className="font-bold text-lg">The Cake Tree</h1>
             </div>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground mt-4">
-              <div className="flex items-center gap-1.5">
-                <Star className="w-4 h-4 text-accent" />
-                <span>4.7/5 on Google</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Phone className="w-4 h-4 text-accent" />
-                <span>+91 86989 21009</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Instagram className="w-4 h-4 text-accent" />
-                <span>@thecaketree1009</span>
-              </div>
-            </div>
           </div>
           <div className="flex-1 flex items-center">
             <h2 className="text-6xl md:text-8xl font-extrabold text-foreground leading-none">
