@@ -2,6 +2,7 @@ import AboutSection from "@/components/sections/about";
 import ContactSection from "@/components/sections/contact";
 import Footer from "@/components/sections/footer";
 import GallerySection from "@/components/sections/gallery";
+import GoogleRatingSection from "@/components/sections/google-rating";
 import HeroSection from "@/components/sections/hero";
 import MapSection from "@/components/sections/map";
 import MenuSection from "@/components/sections/menu";
@@ -19,6 +20,7 @@ export default function Home() {
         <MenuSection />
         <GallerySection />
         <TestimonialsSection />
+        <GoogleRatingSection />
         <ContactSection />
         <MapSection />
       </main>

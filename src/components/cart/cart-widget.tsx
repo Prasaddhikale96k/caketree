@@ -16,7 +16,7 @@ import { Separator } from "../ui/separator";
 import { ScrollArea } from "../ui/scroll-area";
 import { motion } from "framer-motion";
 
-const WHATSAPP_PHONE_NUMBER = "918698921009"; // Replace with your WhatsApp number
+const WHATSAPP_PHONE_NUMBER = "918698921009";
 
 export default function CartWidget() {
   const { cartItems, cartCount, cartTotal } = useCart();
