@@ -56,7 +56,10 @@ export default function Header() {
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/50">
               <Image src={logoUrl} alt="The Cake Tree Logo" layout="fill" objectFit="cover" />
             </div>
-            <span className={cn("font-bold text-xl", isScrolled ? "text-foreground" : "text-white")}>
+            <span className={cn(
+              "font-bold text-xl transition-colors", 
+              isScrolled ? "text-foreground" : "text-white"
+            )}>
               The Cake Tree
             </span>
           </Link>
@@ -68,7 +71,7 @@ export default function Header() {
                 href={link.href}
                 className={cn(
                   "font-medium transition-colors hover:text-primary",
-                  isScrolled ? "text-foreground/80" : "text-white/80"
+                  isScrolled ? "text-foreground/80" : "text-white/80 hover:text-white"
                 )}
               >
                 {link.label}
@@ -79,7 +82,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn(isScrolled ? "text-foreground" : "text-white")}>
+                <Button variant="ghost" size="icon" className={cn("transition-colors", isScrolled ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white")}>
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
