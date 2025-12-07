@@ -1,4 +1,6 @@
-import { Clock, Instagram, MapPin, Phone, MessageCircle } from "lucide-react";
+"use client";
+
+import { Clock, Instagram, Phone, MessageCircle } from "lucide-react";
 import { Card } from "../ui/card";
 import { motion } from "framer-motion";
 
