@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { MoveRight } from "lucide-react";
 
 const FloatingIcon = ({ className, children, delay }: { className?: string, children: React.ReactNode, delay?: string }) => (
@@ -20,22 +18,18 @@ const CakeIcon = () => (
 )
 
 export default function HeroSection() {
-  const heroImage = PlaceHolderImages.find((p) => p.id === "hero-bg");
+  const videoId = "HVZL2OjpFAw";
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
       <div className="absolute inset-0 z-[-1] bg-black/50">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover opacity-40"
-            style={{ backgroundAttachment: 'fixed' }}
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
+        <iframe
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3`}
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        ></iframe>
       </div>
 
       <FloatingIcon className="top-[15%] left-[10%]" delay="0s"><CakeIcon/></FloatingIcon>
