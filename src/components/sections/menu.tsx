@@ -8,13 +8,11 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plus } from "lucide-react";
 import { useCart } from "@/context/cart-context";
-import { useToast } from "@/hooks/use-toast";
 import React from 'react';
 
 export default function MenuSection() {
   const categories = [...new Set(menuItems.map((item) => item.category))];
   const { addItem } = useCart();
-  const { toast } = useToast();
 
   const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>, item: (typeof menuItems)[0]) => {
     const cardElement = (e.target as HTMLElement).closest('.menu-item-card');
@@ -59,11 +57,6 @@ export default function MenuSection() {
     }
     
     addItem({ ...item, quantity: 1 });
-
-    toast({
-      title: "Added to cart ✅",
-      description: `${item.name} is now in your cart.`,
-    });
   };
 
   return (
