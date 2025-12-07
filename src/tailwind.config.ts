@@ -18,7 +18,7 @@ export default {
     extend: {
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
-        headline: ['var(--font-playfair-display)', 'serif'],
+        headline: ['var(--font-inter)', 'sans-serif'],
       },
       letterSpacing: {
         tight: '-0.04em',
