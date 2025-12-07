@@ -4,11 +4,17 @@ import Image from "next/image";
 import { menuItems } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardFooter, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plus } from "lucide-react";
 import { useCart } from "@/context/cart-context";
 import React from 'react';
+import { motion } from "framer-motion";
+
+const cardVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+};
 
 export default function MenuSection() {
   const categories = [...new Set(menuItems.map((item) => item.category))];
@@ -27,7 +33,7 @@ export default function MenuSection() {
       clonedImage.style.width = `${rect.width}px`;
       clonedImage.style.height = `${rect.height}px`;
       clonedImage.style.zIndex = '1000';
-      clonedImage.style.transition = 'all 0.5s ease-in-out';
+      clonedImage.style.transition = 'all 0.5s cubic-bezier(0.5, 0, 0.75, 0)';
       clonedImage.style.borderRadius = '0.5rem';
 
       document.body.appendChild(clonedImage);
@@ -39,20 +45,14 @@ export default function MenuSection() {
         requestAnimationFrame(() => {
             clonedImage.style.left = `${cartRect.left + cartRect.width / 2}px`;
             clonedImage.style.top = `${cartRect.top + cartRect.height / 2}px`;
-            clonedImage.style.width = '20px';
-            clonedImage.style.height = '20px';
+            clonedImage.style.width = '0px';
+            clonedImage.style.height = '0px';
             clonedImage.style.opacity = '0';
-            clonedImage.style.transform = 'scale(0.2)';
         });
       }
       
       setTimeout(() => {
         clonedImage.remove();
-        const cartIconElement = document.getElementById('cart-icon');
-        if (cartIconElement) {
-          cartIconElement.classList.add('animate-bounce');
-          setTimeout(() => cartIconElement.classList.remove('animate-bounce'), 500);
-        }
       }, 500);
     }
     
@@ -60,64 +60,57 @@ export default function MenuSection() {
   };
 
   return (
-    <section id="menu" className="py-16 sm:py-24 bg-secondary/50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-accent">Our Menu</h2>
-          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto text-balance">
-            Crafted with love and the finest ingredients. Explore our range of delightful treats.
-          </p>
-        </div>
-
-        <Tabs defaultValue={categories[0]} className="w-full animate-fade-in-up [animation-delay:0.2s]">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 mb-8 h-auto flex-wrap">
-            {categories.map((category) => (
-              <TabsTrigger key={category} value={category} className="py-2">
-                {category}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-          
+    <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="md:col-span-2 lg:col-span-3">
+    <Card id="menu" className="p-8">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-foreground leading-none mb-6">Our Menu</h2>
+      <Tabs defaultValue={categories[0]} className="w-full">
+        <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 mb-8 h-auto flex-wrap bg-transparent p-0">
           {categories.map((category) => (
-            <TabsContent key={category} value={category}>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {menuItems
-                  .filter((item) => item.category === category)
-                  .map((item, index) => {
-                    const itemImage = PlaceHolderImages.find((p) => p.id === item.imageId);
-                    return (
-                      <Card key={item.id} className="menu-item-card overflow-hidden flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-stone-300/50 dark:hover:shadow-stone-900/50 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
-                        <CardHeader className="p-0">
-                          <div className="relative aspect-square">
-                            {itemImage && (
-                              <Image
-                                src={itemImage.imageUrl}
-                                alt={item.name}
-                                fill
-                                className="object-cover menu-item-image"
-                                data-ai-hint={itemImage.imageHint}
-                              />
-                            )}
-                          </div>
-                        </CardHeader>
-                        <CardContent className="p-4 flex-grow">
-                          <CardTitle className="text-lg font-semibold mb-1">{item.name}</CardTitle>
-                          <p className="text-sm text-muted-foreground h-10">{item.description}</p>
-                        </CardContent>
-                        <CardFooter className="flex justify-between items-center p-4 pt-0">
-                          <p className="text-lg font-bold text-primary">₹{item.price}</p>
-                          <Button size="icon" variant="outline" aria-label="Add to cart" onClick={(e) => handleAddToCart(e, item)}>
-                            <Plus className="h-4 w-4" />
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    );
-                  })}
-              </div>
-            </TabsContent>
+            <TabsTrigger key={category} value={category} className="py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-none">
+              {category}
+            </TabsTrigger>
           ))}
-        </Tabs>
-      </div>
-    </section>
+        </TabsList>
+        
+        {categories.map((category) => (
+          <TabsContent key={category} value={category}>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {menuItems
+                .filter((item) => item.category === category)
+                .map((item, index) => {
+                  const itemImage = PlaceHolderImages.find((p) => p.id === item.imageId);
+                  return (
+                    <Card key={item.id} className="menu-item-card overflow-hidden flex flex-col group">
+                      <CardHeader className="p-0 relative aspect-[4/3] w-full">
+                        {itemImage && (
+                          <Image
+                            src={itemImage.imageUrl}
+                            alt={item.name}
+                            fill
+                            className="object-cover menu-item-image transition-transform duration-500 group-hover:scale-105"
+                            data-ai-hint={itemImage.imageHint}
+                          />
+                        )}
+                      </CardHeader>
+                      <CardFooter className="flex justify-between items-center p-4">
+                        <div>
+                            <p className="font-semibold">{item.name}</p>
+                            <p className="text-sm text-muted-foreground">₹{item.price}</p>
+                        </div>
+                        <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+                        <Button size="icon" variant="outline" className="rounded-full" aria-label="Add to cart" onClick={(e) => handleAddToCart(e, item)}>
+                          <Plus className="h-4 w-4" />
+                        </Button>
+                        </motion.div>
+                      </CardFooter>
+                    </Card>
+                  );
+                })}
+            </div>
+          </TabsContent>
+        ))}
+      </Tabs>
+    </Card>
+    </motion.div>
   );
 }

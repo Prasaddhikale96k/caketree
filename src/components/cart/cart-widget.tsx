@@ -14,7 +14,7 @@ import { useCart } from "@/context/cart-context";
 import CartItem from "./cart-item";
 import { Separator } from "../ui/separator";
 import { ScrollArea } from "../ui/scroll-area";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const WHATSAPP_PHONE_NUMBER = "911234567890"; // Replace with your WhatsApp number
 
@@ -41,22 +41,29 @@ export default function CartWidget() {
   return (
     <Sheet>
       <SheetTrigger asChild>
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 1 }}
+            className="fixed bottom-6 right-6 z-50"
+        >
         <Button
           id="cart-icon"
-          variant="outline"
+          variant="default"
           size="icon"
-          className="fixed top-24 right-4 z-50 rounded-full w-14 h-14 bg-background/80 backdrop-blur-lg shadow-lg"
+          className="rounded-full w-16 h-16 bg-card text-foreground shadow-lg"
         >
           <ShoppingBag />
           {cartCount > 0 && (
-            <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+            <span className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
               {cartCount}
             </span>
           )}
           <span className="sr-only">Open cart</span>
         </Button>
+        </motion.div>
       </SheetTrigger>
-      <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg">
+      <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg bg-card">
         <SheetHeader className="px-6">
           <SheetTitle>Cart ({cartCount})</SheetTitle>
         </SheetHeader>
@@ -71,7 +78,7 @@ export default function CartWidget() {
                 </div>
             </ScrollArea>
             <Separator />
-            <SheetFooter className="px-6 py-4">
+            <SheetFooter className="px-6 py-4 bg-card">
               <div className="w-full space-y-4">
                 <div className="flex justify-between text-lg font-semibold">
                   <span>Subtotal</span>
@@ -79,7 +86,7 @@ export default function CartWidget() {
                 </div>
                 <Button 
                     onClick={handleCheckout} 
-                    className="w-full"
+                    className="w-full bg-foreground text-background hover:bg-foreground/80"
                     disabled={cartCount === 0}
                 >
                     Checkout via WhatsApp

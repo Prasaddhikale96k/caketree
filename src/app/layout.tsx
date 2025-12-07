@@ -1,30 +1,17 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
-import { Poppins, Montserrat, Dancing_Script } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { CartProvider } from '@/context/cart-context';
 import CartWidget from '@/components/cart/cart-widget';
+import Header from '@/components/sections/header';
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-poppins',
-  weight: ['300', '400', '500', '600', '700', '800', '900']
-});
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-montserrat',
-  weight: ['300', '400', '500', '600', '700', '800']
-});
-
-const dancingScript = Dancing_Script({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-dancing-script',
-  weight: ['400', '700']
+  variable: '--font-inter',
+  weight: ['400', '500', '600', '700', '800']
 });
 
 export const metadata: Metadata = {
@@ -38,9 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("scroll-smooth", poppins.variable, montserrat.variable, dancingScript.variable)}>
+    <html lang="en" className={cn("scroll-smooth", inter.variable)}>
       <body className="font-body antialiased">
         <CartProvider>
+          <Header />
           {children}
           <CartWidget />
         </CartProvider>
