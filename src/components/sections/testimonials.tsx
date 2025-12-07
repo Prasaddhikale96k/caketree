@@ -32,7 +32,7 @@ export default function TestimonialsSection() {
                         <div className="mt-2 flex items-center justify-between">
                             <h4 className="font-semibold text-sm">{testimonial.name}</h4>
                             <div className="flex">
-                                <StarRating rating={testimonial.rating} />
+                                <StarRating rating={testimonial.rating} starClassName="w-4 h-4" />
                             </div>
                         </div>
                     </div>
