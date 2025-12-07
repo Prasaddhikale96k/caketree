@@ -7,9 +7,64 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plus } from "lucide-react";
+import { useCart } from "@/context/cart-context";
+import { useToast } from "@/hooks/use-toast";
+import React from 'react';
 
 export default function MenuSection() {
   const categories = [...new Set(menuItems.map((item) => item.category))];
+  const { addItem } = useCart();
+  const { toast } = useToast();
+
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>, item: (typeof menuItems)[0]) => {
+    const cardElement = (e.target as HTMLElement).closest('.menu-item-card');
+    const imageElement = cardElement?.querySelector('.menu-item-image');
+    
+    if (imageElement) {
+      const rect = imageElement.getBoundingClientRect();
+      const clonedImage = imageElement.cloneNode(true) as HTMLImageElement;
+      clonedImage.style.position = 'fixed';
+      clonedImage.style.left = `${rect.left}px`;
+      clonedImage.style.top = `${rect.top}px`;
+      clonedImage.style.width = `${rect.width}px`;
+      clonedImage.style.height = `${rect.height}px`;
+      clonedImage.style.zIndex = '1000';
+      clonedImage.style.transition = 'all 0.5s ease-in-out';
+      clonedImage.style.borderRadius = '0.5rem';
+
+      document.body.appendChild(clonedImage);
+
+      const cartIcon = document.getElementById('cart-icon');
+      const cartRect = cartIcon?.getBoundingClientRect();
+      
+      if (cartRect) {
+        requestAnimationFrame(() => {
+            clonedImage.style.left = `${cartRect.left + cartRect.width / 2}px`;
+            clonedImage.style.top = `${cartRect.top + cartRect.height / 2}px`;
+            clonedImage.style.width = '20px';
+            clonedImage.style.height = '20px';
+            clonedImage.style.opacity = '0';
+            clonedImage.style.transform = 'scale(0.2) rotate(360deg)';
+        });
+      }
+      
+      setTimeout(() => {
+        clonedImage.remove();
+        const cartIconElement = document.getElementById('cart-icon');
+        if (cartIconElement) {
+          cartIconElement.classList.add('animate-bounce');
+          setTimeout(() => cartIconElement.classList.remove('animate-bounce'), 500);
+        }
+      }, 500);
+    }
+    
+    addItem({ ...item, quantity: 1 });
+
+    toast({
+      title: "Added to cart ✅",
+      description: `${item.name} is now in your cart.`,
+    });
+  };
 
   return (
     <section id="menu" className="py-16 sm:py-24 bg-secondary/50">
@@ -38,7 +93,7 @@ export default function MenuSection() {
                   .map((item, index) => {
                     const itemImage = PlaceHolderImages.find((p) => p.id === item.imageId);
                     return (
-                      <Card key={item.id} className="overflow-hidden flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-stone-300/50 dark:hover:shadow-stone-900/50 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                      <Card key={item.id} className="menu-item-card overflow-hidden flex flex-col transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-stone-300/50 dark:hover:shadow-stone-900/50 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                         <CardHeader className="p-0">
                           <div className="relative aspect-square">
                             {itemImage && (
@@ -46,7 +101,7 @@ export default function MenuSection() {
                                 src={itemImage.imageUrl}
                                 alt={item.name}
                                 fill
-                                className="object-cover"
+                                className="object-cover menu-item-image"
                                 data-ai-hint={itemImage.imageHint}
                               />
                             )}
@@ -58,7 +113,7 @@ export default function MenuSection() {
                         </CardContent>
                         <CardFooter className="flex justify-between items-center p-4 pt-0">
                           <p className="text-lg font-bold text-primary">₹{item.price}</p>
-                          <Button size="icon" variant="outline" aria-label="Add to cart">
+                          <Button size="icon" variant="outline" aria-label="Add to cart" onClick={(e) => handleAddToCart(e, item)}>
                             <Plus className="h-4 w-4" />
                           </Button>
                         </CardFooter>

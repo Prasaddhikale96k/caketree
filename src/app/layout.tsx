@@ -3,6 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
 import { Poppins, Montserrat, Dancing_Script } from 'next/font/google';
+import { CartProvider } from '@/context/cart-context';
+import CartWidget from '@/components/cart/cart-widget';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -38,7 +40,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("scroll-smooth", poppins.variable, montserrat.variable, dancingScript.variable)}>
       <body className="font-body antialiased">
-        {children}
+        <CartProvider>
+          {children}
+          <CartWidget />
+        </CartProvider>
         <Toaster />
       </body>
     </html>
