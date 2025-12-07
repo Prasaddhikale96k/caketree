@@ -40,6 +40,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'intellectual-purple-3mohvtjdo3-vcxzts361r.edgeone.dev',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

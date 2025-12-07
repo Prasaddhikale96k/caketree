@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-const logoUrl = "https://img.sanishtech.com/u/0052685cea3109388424a100fcf44547.jpg";
+const logoUrl = "https://intellectual-purple-3mohvtjdo3-vcxzts361r.edgeone.dev/cake%20tree.jpg";
 
 const navLinks = [
   { href: "#about", label: "About" },
