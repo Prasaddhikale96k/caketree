@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
-import { Inter } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import { CartProvider } from '@/context/cart-context';
 import CartWidget from '@/components/cart/cart-widget';
 import Header from '@/components/sections/header';
@@ -12,6 +12,13 @@ const inter = Inter({
   display: 'swap',
   variable: '--font-inter',
   weight: ['400', '500', '600', '700', '800']
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair-display',
+  weight: ['700'],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("scroll-smooth", inter.variable)}>
+    <html lang="en" className={cn("scroll-smooth", inter.variable, playfairDisplay.variable)}>
       <body className="font-body antialiased">
         <CartProvider>
           <Header />

@@ -18,10 +18,11 @@ export default {
     extend: {
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
-        headline: ['var(--font-inter)', 'sans-serif'],
+        headline: ['var(--font-playfair-display)', 'serif'],
       },
       letterSpacing: {
         tight: '-0.04em',
+        tighter: '-0.02em'
       },
       colors: {
         background: 'hsl(var(--background))',
