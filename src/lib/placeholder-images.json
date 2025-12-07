@@ -1,3 +1,208 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Soft blurred background of a cafe ambiance",
+      "imageUrl": "https://images.unsplash.com/photo-1685257814915-7f2f15f45608?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYWZlJTIwYW1iaWFuY2V8ZW58MHx8fHwxNzY1MDg2MzE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cafe ambiance"
+    },
+    {
+      "id": "about-image",
+      "description": "A well-lit shot of the cafe's interior",
+      "imageUrl": "https://images.unsplash.com/photo-1726873800099-53f5496281e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FmZSUyMGludGVyaW9yfGVufDB8fHx8MTc2NDk4NjgyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cafe interior"
+    },
+    {
+      "id": "gallery-1",
+      "description": "A slice of chocolate cake on a plate",
+      "imageUrl": "https://images.unsplash.com/photo-1602630209855-dceac223adfe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYWtlJTIwc2xpY2V8ZW58MHx8fHwxNzY0OTg4NjMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cake slice"
+    },
+    {
+      "id": "gallery-2",
+      "description": "Cozy corner of the cafe with comfortable seating",
+      "imageUrl": "https://images.unsplash.com/photo-1630098897299-72713bac42a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjYWZlJTIwY29ybmVyfGVufDB8fHx8MTc2NTAwNTQ3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cafe corner"
+    },
+    {
+      "id": "gallery-3",
+      "description": "Close up of a barista making coffee",
+      "imageUrl": "https://images.unsplash.com/photo-1655655555296-a742bde9c446?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxiYXJpc3RhJTIwY29mZmVlfGVufDB8fHx8MTc2NTAyMjU3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "barista coffee"
+    },
+    {
+      "id": "gallery-4",
+      "description": "A display of fresh pastries",
+      "imageUrl": "https://images.unsplash.com/photo-1566903291353-6a2acf0e5c0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXN0cnklMjBkaXNwbGF5fGVufDB8fHx8MTc2NTA4NjMxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pastry display"
+    },
+    {
+      "id": "gallery-5",
+      "description": "Friends chatting over coffee",
+      "imageUrl": "https://images.unsplash.com/photo-1710880694444-970aaf7e7f97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmcmllbmRzJTIwY29mZmVlfGVufDB8fHx8MTc2NTA4NjMxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "friends coffee"
+    },
+    {
+      "id": "gallery-6",
+      "description": "Exterior view of The Cake Tree cafe",
+      "imageUrl": "https://images.unsplash.com/photo-1518739745383-0ef26e9dd7fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYWZlJTIwZXh0ZXJpb3J8ZW58MHx8fHwxNzY1MDI2Mzg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cafe exterior"
+    },
+    {
+      "id": "gallery-7",
+      "description": "A decorated birthday cake",
+      "imageUrl": "https://images.unsplash.com/photo-1551879403-6adb554966fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxiaXJ0aGRheSUyMGNha2V8ZW58MHx8fHwxNzY1MDg2MzE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "birthday cake"
+    },
+    {
+      "id": "gallery-8",
+      "description": "Latte art in a cup",
+      "imageUrl": "https://images.unsplash.com/photo-1650097364104-eef0e54af0da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bGF0dGUlMjBhcnR8ZW58MHx8fHwxNzY1MDE0NTUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "latte art"
+    },
+    {
+      "id": "gallery-9",
+      "description": "A stack of colorful macarons",
+      "imageUrl": "https://images.unsplash.com/photo-1627631589717-09427e6ceeab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2xvcmZ1bCUyMG1hY2Fyb25zfGVufDB8fHx8MTc2NTA0MDQ4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "colorful macarons"
+    },
+    {
+      "id": "gallery-10",
+      "description": "Interior design detail of the cafe",
+      "imageUrl": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYWZlJTIwaW50ZXJpb3J8ZW58MHx8fHwxNzY0OTg2ODI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cafe interior"
+    },
+    {
+      "id": "menu-1",
+      "description": "A slice of chocolate truffle cake",
+      "imageUrl": "https://images.unsplash.com/photo-1602351447937-745cb720612f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjaG9jb2xhdGUlMjBjYWtlfGVufDB8fHx8MTc2NTA3NDYxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chocolate cake"
+    },
+    {
+      "id": "menu-2",
+      "description": "A slice of red velvet cake",
+      "imageUrl": "https://images.unsplash.com/photo-1640292767657-3c817244f77b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZWQlMjB2ZWx2ZXR8ZW58MHx8fHwxNzY1MDg2MzE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "red velvet"
+    },
+    {
+      "id": "menu-3",
+      "description": "A slice of fresh fruit cake",
+      "imageUrl": "https://images.unsplash.com/photo-1702812528341-2da8657c76bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmcnVpdCUyMGNha2V8ZW58MHx8fHwxNzY1MDE5ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fruit cake"
+    },
+    {
+      "id": "menu-4",
+      "description": "A slice of blueberry cheesecake",
+      "imageUrl": "https://images.unsplash.com/photo-1716579870046-878e4d3f7c28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGVlc2VjYWtlJTIwc2xpY2V8ZW58MHx8fHwxNzY1MDQ5NjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cheesecake slice"
+    },
+    {
+      "id": "menu-5",
+      "description": "A chocolate croissant on a plate",
+      "imageUrl": "https://images.unsplash.com/photo-1597528662465-55ece5734101?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjaG9jb2xhdGUlMjBjcm9pc3NhbnR8ZW58MHx8fHwxNzY1MDY1ODkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chocolate croissant"
+    },
+    {
+      "id": "menu-6",
+      "description": "An almond tart with sliced almonds",
+      "imageUrl": "https://images.unsplash.com/photo-1588703782677-8492b24e0544?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YWxtb25kJTIwdGFydHxlbnwwfHx8fDE3NjUwODYzMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "almond tart"
+    },
+    {
+      "id": "menu-7",
+      "description": "A box of colorful macarons",
+      "imageUrl": "https://images.unsplash.com/photo-1595877704598-910cd38569f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYWNhcm9ucyUyMGJveHxlbnwwfHx8fDE3NjUwODYzMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "macarons box"
+    },
+    {
+      "id": "menu-8",
+      "description": "A vegetable puff pastry",
+      "imageUrl": "https://images.unsplash.com/photo-1599122759357-66745a5c36ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx2ZWclMjBwdWZmfGVufDB8fHx8MTc2NTAyODcwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "veg puff"
+    },
+    {
+      "id": "menu-9",
+      "description": "A grilled paneer tikka sandwich",
+      "imageUrl": "https://images.unsplash.com/photo-1528736235302-52922df5c122?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxncmlsbGVkJTIwc2FuZHdpY2h8ZW58MHx8fHwxNzY1MDE3NDg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "grilled sandwich"
+    },
+    {
+      "id": "menu-10",
+      "description": "A cup of cappuccino with latte art",
+      "imageUrl": "https://images.unsplash.com/photo-1638202448050-bddae16dd9be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXBwdWNjaW5vJTIwY3VwfGVufDB8fHx8MTc2NTA2NjYyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cappuccino cup"
+    },
+    {
+      "id": "menu-11",
+      "description": "A glass of iced latte",
+      "imageUrl": "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpY2VkJTIwbGF0dGV8ZW58MHx8fHwxNzY1MDQyNjMwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "iced latte"
+    },
+    {
+      "id": "menu-12",
+      "description": "A beautifully designed birthday cake",
+      "imageUrl": "https://images.unsplash.com/photo-1676623224789-b57fd0155489?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZXNpZ25lciUyMGNha2V8ZW58MHx8fHwxNzY1MDg2MzE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "designer cake"
+    },
+    {
+      "id": "specials-1",
+      "description": "Full red velvet cake",
+      "imageUrl": "https://images.unsplash.com/photo-1574473321878-56823b9e2768?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZWQlMjBjYWtlfGVufDB8fHx8MTc2NTA4NjMxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "red cake"
+    },
+    {
+      "id": "specials-2",
+      "description": "Full chocolate truffle cake",
+      "imageUrl": "https://images.unsplash.com/photo-1517427294546-5aa121f68e8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaG9jb2xhdGUlMjBjYWtlfGVufDB8fHx8MTc2NTA3NDYxNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chocolate cake"
+    },
+    {
+      "id": "specials-3",
+      "description": "Full fresh fruit cake",
+      "imageUrl": "https://images.unsplash.com/photo-1537029415773-e79d5d8e68d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmcnVpdCUyMGNha2V8ZW58MHx8fHwxNzY1MDE5ODAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fruit cake"
+    },
+    {
+      "id": "specials-4",
+      "description": "A multi-tiered designer birthday cake",
+      "imageUrl": "https://images.unsplash.com/photo-1632396690014-cf7a0a2f3bbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWRkaW5nJTIwY2FrZXxlbnwwfHx8fDE3NjQ5ODg0OTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wedding cake"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Portrait of a happy customer Anjali",
+      "imageUrl": "https://images.unsplash.com/photo-1610655507808-a59293f4e332?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2NTAxNzM4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Portrait of a happy customer Rohan",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjQ5NzY5OTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Portrait of a happy customer Priya",
+      "imageUrl": "https://images.unsplash.com/photo-1592621385612-4d7129426394?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHNtaWxlfGVufDB8fHx8MTc2NTA3OTMwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman smile"
+    },
+    {
+      "id": "testimonial-4",
+      "description": "Portrait of a happy customer Vikram",
+      "imageUrl": "https://images.unsplash.com/photo-1607378119679-1b10e82b3704?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYW4lMjBzbWlsZXxlbnwwfHx8fDE3NjUwMjc5ODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man smile"
+    },
+    {
+      "id": "testimonial-5",
+      "description": "Portrait of a happy customer Sunita",
+      "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvbGRlciUyMHdvbWFufGVufDB8fHx8MTc2NTA2ODYwM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "older woman"
+    },
+    {
+      "id": "map-image",
+      "description": "A stylized map showing the location of the cafe",
+      "imageUrl": "https://images.unsplash.com/photo-1476385822777-70eabacbd41f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2NTA4NjMxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city map"
+    }
+  ]
 }
