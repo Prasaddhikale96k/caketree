@@ -10,7 +10,7 @@ export default function Footer() {
   const instaUrl = "https://www.instagram.com/thecaketree1009/";
 
   return (
-    <footer className="w-full mt-16 mb-8">
+    <footer id="footer" className="w-full mt-16 mb-8">
       <div className="container mx-auto px-4 py-6 text-center flex flex-col items-center space-y-6">
         <Image src={logoUrl} alt="The Cake Tree Logo" width={60} height={60} className="rounded-full" />
         
