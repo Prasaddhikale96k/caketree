@@ -20,12 +20,12 @@ export default function Home() {
         <AboutSection />
         <SpecialsSection />
         <MenuSection />
+        <GallerySection />
         <TestimonialsSection />
         <ContactSection />
         <MapSection />
         <GoogleRatingSection />
       </main>
-      <GallerySection />
       <Marquee text="Freshly Baked • Nature Lover • Organic Ingredients" />
       <Footer />
     </div>
