@@ -6,6 +6,7 @@ import { MapPin } from "lucide-react";
 export default function MapSection() {
   const mapImage = PlaceHolderImages.find((p) => p.id === "map-image");
   const mapLink = "https://maps.app.goo.gl/M4s5eM3W3qA8Z9jE8"; 
+  const embedMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.877735398254!2d73.83446007588302!3d20.013473081403595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddebabd9313491%3A0x4426ce2903b573e!2sThe%20Cake%20Tree!5e0!3m2!1sen!2sin!4v1727788574685!5m2!1sen!2sin";
 
   return (
     <section id="map" className="py-16 sm:py-24 bg-background">
@@ -18,21 +19,20 @@ export default function MapSection() {
         </div>
 
         <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-stone-200/50 dark:shadow-stone-900/50 animate-soft-zoom-in">
-          <a href={mapLink} target="_blank" rel="noopener noreferrer" className="block">
-            {mapImage && (
-              <Image
-                src={mapImage.imageUrl}
-                alt={mapImage.description}
-                width={1200}
-                height={600}
-                className="w-full h-auto aspect-[2/1] object-cover"
-                data-ai-hint={mapImage.imageHint}
-              />
-            )}
-            <div className="absolute inset-0 bg-black/20 hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-                <MapPin className="text-destructive w-16 h-16 animate-bounce-in drop-shadow-2xl"/>
-            </div>
-          </a>
+          <div className="relative h-[400px] md:h-[600px] w-full">
+            <iframe
+              src={embedMapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <a href={mapLink} target="_blank" rel="noopener noreferrer" className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-colors duration-300">
+               <MapPin className="text-destructive w-16 h-16 animate-bounce-in drop-shadow-2xl"/>
+            </a>
+          </div>
         </div>
         <div className="text-center mt-8">
             <Button size="lg" asChild className="transition-transform hover:scale-105 animate-fade-in-up [animation-delay:0.2s]">
