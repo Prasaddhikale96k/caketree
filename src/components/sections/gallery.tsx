@@ -46,7 +46,7 @@ export default function GallerySection() {
   const galleryImages = PlaceHolderImages.filter(p => p.id.startsWith("gallery-"));
 
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "start", dragFree: true }, [
-    Autoplay({ delay: 3000, stopOnInteraction: false }),
+    Autoplay({ delay: 2000, stopOnInteraction: false }),
   ]);
 
   return (
