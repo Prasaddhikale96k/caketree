@@ -22,7 +22,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
-      <div className="absolute inset-0 z-[-1] bg-black/50">
+      <div className="absolute inset-0 z-[-1]">
         <iframe
           className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2"
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3`}
@@ -30,6 +30,7 @@ export default function HeroSection() {
           allow="autoplay; encrypted-media"
           allowFullScreen
         ></iframe>
+         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       <FloatingIcon className="top-[15%] left-[10%]" delay="0s"><CakeIcon/></FloatingIcon>
