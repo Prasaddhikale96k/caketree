@@ -11,28 +11,32 @@ import MenuSection from "@/components/sections/menu";
 import SpecialsSection from "@/components/sections/specials";
 import TestimonialsSection from "@/components/sections/testimonials";
 import Marquee from "@/components/ui/marquee";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Home() {
+  const isMobile = useIsMobile();
   return (
     <div className="bg-background">
-      <div className="p-5 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <HeroSection />
-        <AboutSection />
-        <SpecialsSection />
-        <MenuSection />
-      </div>
+      <main className={isMobile ? "pt-20" : ""}>
+        <div className="p-5 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <HeroSection />
+          <AboutSection />
+          <SpecialsSection />
+          <MenuSection />
+        </div>
 
-      <GallerySection />
-      
-      <div className="p-5 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <TestimonialsSection />
-        <ContactSection />
-        <MapSection />
-        <GoogleRatingSection />
-      </div>
+        <GallerySection />
+        
+        <div className="p-5 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <TestimonialsSection />
+          <ContactSection />
+          <MapSection />
+          <GoogleRatingSection />
+        </div>
 
-      <Marquee text="Freshly Baked • Nature Lover • Organic Ingredients" />
-      <Footer />
+        <Marquee text="Freshly Baked • Nature Lover • Organic Ingredients" />
+        <Footer />
+      </main>
     </div>
   );
 }
