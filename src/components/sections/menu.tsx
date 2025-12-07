@@ -10,6 +10,7 @@ import { Plus } from "lucide-react";
 import { useCart } from "@/context/cart-context";
 import React from 'react';
 import { motion } from "framer-motion";
+import { useToast } from "@/hooks/use-toast";
 
 const cardVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -19,6 +20,7 @@ const cardVariants = {
 export default function MenuSection() {
   const categories = [...new Set(menuItems.map((item) => item.category))];
   const { addItem } = useCart();
+  const { toast } = useToast();
 
   const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>, item: (typeof menuItems)[0]) => {
     const cardElement = (e.target as HTMLElement).closest('.menu-item-card');
@@ -57,6 +59,10 @@ export default function MenuSection() {
     }
     
     addItem({ ...item, quantity: 1 });
+    toast({
+      title: "Added to cart",
+      description: `${item.name} has been added to your cart.`,
+    });
   };
 
   return (
@@ -81,7 +87,7 @@ export default function MenuSection() {
                   const itemImage = PlaceHolderImages.find((p) => p.id === item.imageId);
                   return (
                     <Card key={item.id} className="menu-item-card overflow-hidden flex flex-col group">
-                      <CardHeader className="p-0 relative aspect-[4/3] w-full">
+                      <CardHeader className="p-0 relative aspect-[4/3] w-full overflow-hidden">
                         {itemImage && (
                           <Image
                             src={itemImage.imageUrl}
