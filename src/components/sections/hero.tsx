@@ -11,7 +11,7 @@ const cardVariants = {
 
 export default function HeroSection() {
   const videoUrl = "https://videos.pexels.com/video-files/3119255/3119255-hd_1920_1080_25fps.mp4";
-  const logoUrl = "https://intellectual-purple-3mohvtjdo3-vcxzts361r.edgeone.dev/cake%20tree.jpg";
+  const logoUrl = "https://cognitive-plum-btds6czulo-ezkw5h00vs.edgeone.dev/cake%20tree.jpg";
 
   return (
     <>

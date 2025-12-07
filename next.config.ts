@@ -46,6 +46,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cognitive-plum-btds6czulo-ezkw5h00vs.edgeone.dev',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
