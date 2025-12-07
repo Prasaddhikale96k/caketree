@@ -36,10 +36,6 @@ export default function HeroSection() {
                 <Instagram className="w-4 h-4 text-accent" />
                 <span>@thecaketree1009</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-accent" />
-                <span>Jatra Hotel, Nashik</span>
-              </div>
             </div>
           </div>
           <div className="flex-1 flex items-center">
