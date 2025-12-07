@@ -1,7 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
-import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 const FloatingIcon = ({ className, children, delay }: { className?: string, children: React.ReactNode, delay?: string }) => (
   <div
@@ -20,23 +18,19 @@ const CakeIcon = () => (
 )
 
 export default function HeroSection() {
-  const heroBg = PlaceHolderImages.find(p => p.id === 'hero-bg');
+  const videoUrl = "https://videos.pexels.com/video-files/3119255/3119255-hd_1920_1080_25fps.mp4";
 
   return (
     <section className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
       <div className="absolute inset-0 z-[-1]">
-        {heroBg && (
-          <div className="absolute inset-0" style={{ backgroundAttachment: 'fixed' }}>
-            <Image
-              src={heroBg.imageUrl}
-              alt={heroBg.description}
-              fill
-              className="object-cover opacity-40"
-              priority
-              data-ai-hint={heroBg.imageHint}
-            />
-          </div>
-        )}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          src={videoUrl}
+        />
          <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
