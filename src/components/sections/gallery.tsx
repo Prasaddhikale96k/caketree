@@ -16,7 +16,7 @@ const cardVariants = {
 const ImageRow = ({ images, x, className }: { images: typeof PlaceHolderImages, x: any, className?: string }) => (
     <motion.div style={{ x }} className={cn("absolute flex gap-8 -translate-y-1/2 top-1/2", className)}>
         {images.map((image, index) => (
-            <div className="relative w-64 h-80 shrink-0" key={index}>
+            <div className="relative w-72 h-96 shrink-0" key={index}>
                 <Image
                     src={image.imageUrl}
                     alt={image.description}
@@ -48,8 +48,8 @@ export default function GallerySection() {
 
   return (
     <motion.div ref={galleryRef} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} className="md:col-span-2 lg:col-span-2 h-[120vh] -mx-4">
-       <Card className="p-8 h-full sticky top-4 bg-foreground/90 backdrop-blur-sm overflow-hidden">
-         <h2 className="text-4xl md:text-5xl font-extrabold text-background/80 leading-none text-center absolute top-16 left-1/2 -translate-x-1/2 z-10">
+       <Card id="gallery" className="p-8 h-full sticky top-4 backdrop-blur-sm overflow-hidden bg-transparent border-none shadow-none">
+         <h2 className="text-4xl md:text-5xl font-extrabold text-foreground/80 leading-none text-center absolute top-16 left-1/2 -translate-x-1/2 z-10">
             Ambiance
          </h2>
          <motion.div style={{ y }} className="relative h-full">
