@@ -23,7 +23,7 @@ export default function Footer() {
                     +91 86989 21009
                 </a>
                 <a href={instaUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors flex items-center gap-2">
-                    <Instagram className="w-4 h-4" /> @thecaketree1009
+                    @thecaketree1009
                 </a>
                 <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                     📍 Jatra Hotel, Nashik
