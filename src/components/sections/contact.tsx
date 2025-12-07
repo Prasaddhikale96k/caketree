@@ -5,9 +5,9 @@ import { Card } from "../ui/card";
 import { motion } from "framer-motion";
 
 const contactInfo = [
-  { icon: Phone, text: "+91 12345 67890", href: "tel:+911234567890" },
-  { icon: MessageCircle, text: "WhatsApp Us", href: "https://wa.me/911234567890" },
-  { icon: Instagram, text: "@thecaketree", href: "https://instagram.com" },
+  { icon: Phone, text: "+91 86989 21009", href: "tel:+918698921009" },
+  { icon: MessageCircle, text: "WhatsApp Us", href: "https://wa.me/918698921009" },
+  { icon: Instagram, text: "@thecaketree1009", href: "https://www.instagram.com/thecaketree1009/" },
 ];
 
 const openingHours = [
