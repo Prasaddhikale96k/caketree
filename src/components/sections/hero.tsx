@@ -14,6 +14,7 @@ const textContainerVariants = {
   visible: {
     transition: {
       staggerChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 };
@@ -48,7 +49,6 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
             className="text-center font-headline font-bold text-foreground text-[clamp(3rem,8vw,6rem)] leading-none tracking-tighter"
-            style={{ y }}
           >
             <span className="block overflow-hidden">
                 <motion.span variants={textLineVariants} className="block">Good Times,</motion.span>

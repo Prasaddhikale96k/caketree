@@ -43,11 +43,11 @@ export default function GallerySection() {
 
   const x1 = useTransform(scrollYProgress, [0, 1], ["25%", "-25%"]);
   const x2 = useTransform(scrollYProgress, [0, 1], ["-25%", "25%"]);
-  const y = useTransform(scrollYProgress, [0, 1], ["-300px", "300px"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-200px", "200px"]);
 
 
   return (
-    <motion.div ref={galleryRef} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} className="md:col-span-2 lg:col-span-2 h-[150vh] -mx-4">
+    <motion.div ref={galleryRef} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} className="md:col-span-2 lg:col-span-2 h-[120vh] -mx-4">
        <Card className="p-8 h-full sticky top-4 bg-foreground/90 backdrop-blur-sm overflow-hidden">
          <h2 className="text-4xl md:text-5xl font-extrabold text-background/80 leading-none text-center absolute top-16 left-1/2 -translate-x-1/2 z-10">
             Ambiance
