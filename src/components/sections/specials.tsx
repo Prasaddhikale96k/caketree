@@ -13,13 +13,13 @@ export default function SpecialsSection() {
             Handpicked by our customers. These are the stars of The Cake Tree.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="flex overflow-x-auto space-x-8 py-4 snap-x snap-mandatory">
           {specials.map((item, index) => {
             const itemImage = PlaceHolderImages.find((p) => p.id === item.imageId);
             return (
               <div
                 key={item.id}
-                className="relative group overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-stone-300/50 dark:hover:shadow-stone-900/50 animate-fade-in-up"
+                className="relative group overflow-hidden rounded-2xl shadow-xl transition-all duration-500 hover:shadow-2xl hover:shadow-stone-300/50 dark:hover:shadow-stone-900/50 animate-fade-in-up w-[80vw] md:w-[40vw] lg:w-[35vw] flex-shrink-0 snap-center"
                 style={{animationDelay: `${index * 0.15}s`}}
               >
                 <div className="relative w-full aspect-video">
@@ -30,6 +30,7 @@ export default function SpecialsSection() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                       data-ai-hint={itemImage.imageHint}
+                      sizes="(max-width: 768px) 80vw, (max-width: 1024px) 40vw, 35vw"
                     />
                   )}
                 </div>
