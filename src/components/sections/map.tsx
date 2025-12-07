@@ -29,9 +29,6 @@ export default function MapSection() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-            <a href={mapLink} target="_blank" rel="noopener noreferrer" className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-colors duration-300">
-               <MapPin className="text-destructive w-16 h-16 animate-bounce-in drop-shadow-2xl"/>
-            </a>
           </div>
         </div>
         <div className="text-center mt-8">
