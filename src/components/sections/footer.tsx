@@ -5,7 +5,7 @@ import { Instagram } from "lucide-react";
 
 export default function Footer() {
   const logoUrl = "https://cognitive-plum-btds6czulo-ezkw5h00vs.edgeone.dev/cake%20tree.jpg";
-  const mapUrl = "https://www.google.com/maps/search/?api=1&query=The+Cake+Tree+Nashik";
+  const mapUrl = "https://maps.app.goo.gl/wJ5a2j3239aJHeAx6";
   const whatsappUrl = "https://wa.me/918698921009?text=Hi,%20I%20saw%20your%20website%20and%20would%20like%20to%20order!";
   const instaUrl = "https://www.instagram.com/thecaketree1009/";
 
@@ -25,7 +25,7 @@ export default function Footer() {
                 <a href={instaUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors flex items-center gap-2">
                     @thecaketree1009
                 </a>
-                <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="hovertext-accent transition-colors">
                     📍 Jatra Hotel, Nashik
                 </a>
             </div>
