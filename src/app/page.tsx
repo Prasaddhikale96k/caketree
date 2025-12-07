@@ -15,7 +15,7 @@ import Marquee from "@/components/ui/marquee";
 export default function Home() {
   return (
     <div className="bg-background">
-      <div className="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="p-5 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <HeroSection />
         <AboutSection />
         <SpecialsSection />
@@ -24,7 +24,7 @@ export default function Home() {
 
       <GallerySection />
       
-      <div className="p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="p-5 md:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <TestimonialsSection />
         <ContactSection />
         <MapSection />

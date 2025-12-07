@@ -16,7 +16,7 @@ export default function MapSection() {
 
   return (
     <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="md:col-span-1 lg:col-span-1">
-      <Card id="map" className="h-full overflow-hidden p-4 flex flex-col gap-4">
+      <Card id="map" className="h-full overflow-hidden p-4 flex flex-col gap-4 shadow-lg">
           <div className="w-full h-full rounded-lg overflow-hidden min-h-[350px]">
             <iframe
                 src={embedMapUrl}
@@ -30,7 +30,7 @@ export default function MapSection() {
           </div>
           <div className="text-center">
             <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
-                <Button className="bg-foreground text-background hover:bg-foreground/80 rounded-full px-6">
+                <Button className="bg-foreground text-background hover:bg-foreground/80 rounded-full px-6 w-full md:w-auto">
                     <MapPin className="mr-2 h-4 w-4" />
                     Get Directions
                 </Button>

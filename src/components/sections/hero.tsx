@@ -1,8 +1,8 @@
 "use client";
 import { Card } from "@/components/ui/card";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
+import ShopStatusIndicator from "@/components/ui/shop-status-indicator";
 
 const cardVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -43,12 +43,13 @@ export default function HeroSection() {
   return (
     <>
       <motion.div ref={heroRef} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="md:col-span-2 lg:col-span-2">
-        <Card className="h-full flex flex-col justify-center p-8 overflow-hidden">
+        <Card className="h-full flex flex-col justify-center items-center p-8 overflow-hidden">
+          <ShopStatusIndicator />
           <motion.h1
             variants={textContainerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center font-headline font-bold text-foreground text-[clamp(3rem,8vw,6rem)] leading-none tracking-tighter"
+            className="text-center font-headline font-bold text-foreground text-[clamp(3rem,12vw,6rem)] leading-none tracking-tighter"
           >
             <span className="block overflow-hidden">
                 <motion.span variants={textLineVariants} className="block">Good Times,</motion.span>
