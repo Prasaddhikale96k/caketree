@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google';
 import { CartProvider } from '@/context/cart-context';
 import CartWidget from '@/components/cart/cart-widget';
 import Header from '@/components/sections/header';
+import SocialLinks from '@/components/sections/social-links';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <CartProvider>
           <Header />
+          <SocialLinks />
           {children}
           <CartWidget />
         </CartProvider>
