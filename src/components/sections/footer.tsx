@@ -25,7 +25,7 @@ export default function Footer() {
                 <a href={instaUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors flex items-center gap-2">
                     @thecaketree1009
                 </a>
-                <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="hovertext-accent transition-colors">
+                <a href={mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                     📍 Jatra Hotel, Nashik
                 </a>
             </div>
