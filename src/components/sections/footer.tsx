@@ -5,7 +5,7 @@ import { Instagram } from "lucide-react";
 
 export default function Footer() {
   const logoUrl = "https://cognitive-plum-btds6czulo-ezkw5h00vs.edgeone.dev/cake%20tree.jpg";
-  const mapUrl = "https://maps.app.goo.gl/wJ5a2j3239aJHeAx6";
+  const mapUrl = "https://maps.app.goo.gl/Ay8GZcuz22naV3PN9";
   const whatsappUrl = "https://wa.me/918698921009?text=Hi,%20I%20saw%20your%20website%20and%20would%20like%20to%20order!";
   const instaUrl = "https://www.instagram.com/thecaketree1009/";
 
