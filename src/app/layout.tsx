@@ -2,6 +2,28 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
+import { Poppins, Montserrat, Dancing_Script } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['300', '400', '500', '600', '700', '800', '900']
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+  weight: ['300', '400', '500', '600', '700', '800']
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dancing-script',
+  weight: ['400', '700']
+});
 
 export const metadata: Metadata = {
   title: 'Cake Tree Delights',
@@ -14,13 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className={cn("font-body antialiased")}>
+    <html lang="en" className={cn("scroll-smooth", poppins.variable, montserrat.variable, dancingScript.variable)}>
+      <body className="font-body antialiased">
         {children}
         <Toaster />
       </body>

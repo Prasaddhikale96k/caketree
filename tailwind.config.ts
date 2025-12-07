@@ -17,8 +17,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Montserrat', 'sans-serif'],
-        headline: ['Montserrat', 'sans-serif'],
+        body: ['var(--font-montserrat)', 'sans-serif'],
+        headline: ['var(--font-poppins)', 'sans-serif'],
+        script: ['var(--font-dancing-script)', 'cursive'],
         code: ['monospace'],
       },
       colors: {
