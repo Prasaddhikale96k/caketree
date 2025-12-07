@@ -15,11 +15,13 @@ import CartItem from "./cart-item";
 import { Separator } from "../ui/separator";
 import { ScrollArea } from "../ui/scroll-area";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const WHATSAPP_PHONE_NUMBER = "918698921009";
 
 export default function CartWidget() {
   const { cartItems, cartCount, cartTotal } = useCart();
+  const constraintsRef = useRef(null);
 
   const handleCheckout = () => {
     let lines = ["Hi CakeTree! I'd like to place an order:", ""];
@@ -40,18 +42,25 @@ export default function CartWidget() {
 
   return (
     <Sheet>
+      <motion.div 
+        ref={constraintsRef} 
+        className="fixed inset-0 pointer-events-none"
+      />
       <SheetTrigger asChild>
         <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            drag
+            dragConstraints={constraintsRef}
+            whileTap={{ scale: 0.95, cursor: "grabbing" }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ type: 'spring', stiffness: 100, damping: 20, delay: 1 }}
-            className="fixed bottom-6 right-6 z-50"
+            className="fixed bottom-6 right-6 z-50 cursor-grab touch-none"
         >
         <Button
           id="cart-icon"
           variant="default"
           size="icon"
-          className="rounded-full w-16 h-16 bg-card text-foreground shadow-lg"
+          className="rounded-full w-16 h-16 bg-card text-foreground shadow-lg pointer-events-auto"
         >
           <ShoppingBag />
           {cartCount > 0 && (
