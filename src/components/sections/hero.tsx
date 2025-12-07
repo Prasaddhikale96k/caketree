@@ -1,3 +1,4 @@
+
 "use client";
 import { Card } from "@/components/ui/card";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -42,8 +43,8 @@ export default function HeroSection() {
 
   return (
     <>
-      <motion.div ref={heroRef} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="md:col-span-2 lg:col-span-2">
-        <Card className="h-full flex flex-col justify-center items-center p-8 overflow-hidden">
+      <motion.div ref={heroRef} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="col-span-1 md:col-span-2 lg:col-span-2">
+        <Card className="h-full flex flex-col justify-center items-center p-8 overflow-hidden min-h-[400px]">
           <ShopStatusIndicator />
           <motion.h1
             variants={textContainerVariants}
@@ -60,8 +61,8 @@ export default function HeroSection() {
           </motion.h1>
         </Card>
       </motion.div>
-      <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="md:col-span-1 lg:col-span-1">
-        <Card className="h-full overflow-hidden group">
+      <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="col-span-1 md:col-span-1 lg:col-span-1">
+        <Card className="h-full overflow-hidden group min-h-[400px]">
             <div className="relative h-full w-full">
                 <video
                     autoPlay
