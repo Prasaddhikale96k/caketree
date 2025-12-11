@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
 
         <p className="text-sm text-muted-foreground pt-8">
-          © 2025 The Cake Tree | Designed by Prasad Dhikale
+          © 2025 The Cake Tree | Designed by The Web Karigar
         </p>
       </div>
     </footer>
